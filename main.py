@@ -18,10 +18,11 @@ def add_task():
             else:
                 print("input input")
                 continue_choice=input("do you want to cnotinue or not?(yes or no)").lower()
-add_task()
-print(tasks)
+
 
 '''
+INPUT WORKFLOW
+
 FUNCTION STARTS
     ↓
 OUTER LOOP STARTS
@@ -75,3 +76,24 @@ check choice?
     INNER LOOP repeats
         ↓
     ask continue choice again'''
+
+def delete_task():
+    if not tasks:
+        print("No avaialable tasks to delete")
+        return
+    task_name=input("enter task name to delete").strip()
+    if task_name in tasks:
+        tasks.remove(task_name)
+        print("Task deleted sucessfully")
+    else:
+        print("Task not found")
+add_task()
+
+print("\nCurrent Tasks:")
+print(tasks)
+
+delete_task()
+
+print("\nupdated Tasks:")
+print(tasks)
+
